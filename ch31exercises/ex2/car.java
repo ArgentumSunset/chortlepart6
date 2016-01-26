@@ -2,6 +2,8 @@ import java.util.*;
 
 class Car {
 
+  Scanner scanner = new Scanner(System.in);
+
 	// instance variables
   double startMiles, gallons, curMiles;   // Stating odometer reading
 
@@ -23,14 +25,15 @@ class Car {
     return (calculateMPG() > 30.0);
   }
 
-  void fillUp(int miles, double gallons) {
+  void fillUp() {
     System.out.println("Filling Station Visit " ); 
     System.out.println("Enter odometer reading: ");
-    curMiles = scan.nextDouble();
+    curMiles = scanner.nextDouble();
     System.out.println("Gallons to fill tank");
-    gallons = 
+    gallons = scanner.nextDouble();
     System.out.println( "Miles per gallon: " + calculateMPG() );
-    System.out.println((gasHog) ? "Gas Hog!" : (economyCar) ? "Economy Car!" : "");
+    System.out.println(((gasHog()) ? "Gas Hog!" : (economyCar()) ? "Economy Car!" : "") + "\n");
+    startMiles = curMiles;
   }
 
 

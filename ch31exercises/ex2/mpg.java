@@ -10,5 +10,8 @@ class MilesPerGallon
     double startMiles = scan.nextDouble();
 
     Car car = new Car(startMiles);
+    car.fillUp();
+    car.fillUp();
+    car.fillUp();
   }
 }
