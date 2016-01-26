@@ -1,15 +1,15 @@
 // Hello.
-You son of a bitch.
+(You son of a bitch.)
 // I've not seen you for awhile.
-Thank God.
-// How are things?
+(Thank God.)
+*/ How are things?
 (That was rhetorical.)
 // I'm fine, personally.
-Hope you're not.
-// I would love to get together sometime!
-Maybe for a little bit of stabby surprise.
-// Maybe next weekend? It's been too long.
-Waaaay too long. I'd almost forgotten how much I hate you.
-// Great! See you then!
-Jackass.
+(Hope you're not.)
+/* I would love to get together sometime! */
+(Maybe for a little bit of stabby surprise.)
+/* Maybe next weekend? It's been too long.
+(Waaaay too long. I'd almost forgotten how much I hate you.)
+Great! See you then! */
+(Jackass.)
 // Bye!
