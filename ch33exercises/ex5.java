@@ -1,4 +1,4 @@
-class Box4 {
+class Box5 {
 	private double width, height, length;
 
 	public double volume() {
@@ -18,7 +18,7 @@ class Box4 {
 	}
 
 	public double surfaceArea() {
-		return 2 * faceArea() + 2 * sideArea() + 2 * baseArea();
+		return (2 * faceArea()) + (2 * sideArea()) + (2 * baseArea());
 	}
 
 	public double[] returnDimens() {
@@ -26,30 +26,34 @@ class Box4 {
 		return dimens;
 	}
 
-	Box4(double w, double h, double l) {
+	Box5(double w, double h, double l) {
 		width = w;
 		height = h;
 		length = l;
 	}
 
-	Box4( Box4 oldBox) {
+	Box5( Box5 oldBox) {
 		width = oldBox.returnDimens()[0];
 		height = oldBox.returnDimens()[1];
 		length = oldBox.returnDimens()[2];
 	}
 
-	public Box4 biggerBox( Box4 oldBox ) {
+	public Box5 biggerBox( Box5 oldBox ) {
 		double w = oldBox.returnDimens()[0] * 1.25;
 		double h = oldBox.returnDimens()[1] * 1.25;
 		double l = oldBox.returnDimens()[2] * 1.25;
-		return new Box4(w, h, l);
+		return new Box5(w, h, l);
 	}
 
-	public Box4 smallerBox( Box4 oldBox) {
+	public Box5 smallerBox( Box5 oldBox) {
 		double w = oldBox.returnDimens()[0] * 0.75;
 		double h = oldBox.returnDimens()[1] * 0.75;
 		double l = oldBox.returnDimens()[2] * 0.75;
-		return new Box4(w, h, l);
+		return new Box5(w, h, l);
+	}
+
+	public boolean nests( Box5 outsideBox ) {
+		return (length < outsideBox.returnDimens()[2] && height < outsideBox.returnDimens()[1] && width < outsideBox.returnDimens()[0]);
 	}
 
 	public void print() {
@@ -61,19 +65,23 @@ class Box4 {
 
 }
 
-class BoxTester4
+class BoxTester5
 {
 
   public static void main ( String[] args )
   {
-     Box4 box = new Box4( 2.5, 5.0, 6.0 );
-     Box4 identBox = new Box4(box);
-     Box4 biggerBox = box.biggerBox( box );
-     Box4 smallerBox = box.smallerBox( box );
+     Box5 box = new Box5( 2.5, 5.0, 6.0 );
+     Box5 identBox = new Box5(box);
+     Box5 biggerBox = box.biggerBox( box );
+     Box5 smallerBox = box.smallerBox( box );
      box.print();
      identBox.print();
      biggerBox.print();
      smallerBox.print();
+
+     System.out.println(box.nests(smallerBox)); //false
+     System.out.println(box.nests(biggerBox)); //true
+     System.out.println(smallerBox.nests(biggerBox)); //true
 
   }
 }
